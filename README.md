@@ -2,11 +2,8 @@ threex.toxicpproc
 =================
 
 threex.toxicpproc is a three.js extension which provide an intoxicated effect :)
-It provides various levels of intoxication
-```sober```,
-```drunk```,
-```high``` and
-```wasted```.
+It provides various levels of intoxication ```sober```, ```drunk```
+, ```high``` and ```wasted```.
 You can easily provide that to your effect composer.
 
 Show Don't Tell
