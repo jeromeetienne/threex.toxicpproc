@@ -30,8 +30,6 @@ bower install threex.toxicpproc
 How To Use It
 =============
 
-threex.badtvpasses.js
-=====================
 It build the passes for a toxic effect. It has mutiples presets which are by 
 order of intoxication: ```sober```, ```drunk```, ```high``` and ```wasted```.
 
