@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<script src='vendor/three.js/build/three-min.js'></script>
-<script src="vendor/three.js/examples/js/postprocessing/EffectComposer.js"></script>
-<script src="vendor/three.js/examples/js/postprocessing/MaskPass.js"></script>
-<script src="vendor/three.js/examples/js/postprocessing/RenderPass.js"></script>
-<script src="vendor/three.js/examples/js/postprocessing/ShaderPass.js"></script>
-<script src="vendor/three.js/examples/js/shaders/CopyShader.js"></script>
-
-<!-- for blur pass -->
-<script src="vendor/three.js/examples/js/shaders/HorizontalBlurShader.js"></script>
-<script src="vendor/three.js/examples/js/shaders/VerticalBlurShader.js"></script>
-
+<script src='../../../vendor/three.js/build/three.min.js'></script>
+<script src="../../../vendor/three.js/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="../../../vendor/three.js/examples/js/postprocessing/MaskPass.js"></script>
+<script src="../../../vendor/three.js/examples/js/postprocessing/RenderPass.js"></script>
+<script src="../../../vendor/three.js/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="../../../vendor/three.js/examples/js/shaders/CopyShader.js"></script>
 <!-- include for threex.glowdatgui -->
-<script src='vendor/three.js/examples/js/libs/dat.gui.min.js'></script>
+<script src='../../../vendor/three.js/examples/js/libs/dat.gui.min.js'></script>
 <script src="../threex.toxicpprocdatgui.js"></script>
 
 <script src="../threex.toxicpproc.js"></script>
-<script src="../threex.uniformstween.js"></script>
 
 <body style='margin: 0px; background-color: #bbbbbb; overflow: hidden;'><script>
 	var renderer	= new THREE.WebGLRenderer();
@@ -81,12 +75,25 @@
 	var mesh	= new THREE.Mesh(geometry, material)
 	scene.add(mesh)
 
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Camera Controls							//
+	//////////////////////////////////////////////////////////////////////////////////
+	// var mouse	= {x : 0, y : 0}
+	// document.addEventListener('mousemove', function(event){
+	// 	mouse.x	= (event.clientX / window.innerWidth ) - 0.5
+	// 	mouse.y	= (event.clientY / window.innerHeight) - 0.5
+	// }, false)
+	// onRenderFcts.push(function(delta, now){
+	// 	camera.position.x += (mouse.x*5 - camera.position.x) * (delta*3)
+	// 	camera.position.y += (mouse.y*5 - camera.position.y) * (delta*3)
+	// 	camera.lookAt( scene.position )
+	// })
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		toxicPasses							//
 	//////////////////////////////////////////////////////////////////////////////////
 
-	var toxicPasses	= new THREEx.ToxicPproc.Passes('high')
+	var toxicPasses	= new THREEx.ToxicPproc.Passes('drunk')
 	onRenderFcts.push(function(delta, now){
 		toxicPasses.update(delta, now)
 	})
